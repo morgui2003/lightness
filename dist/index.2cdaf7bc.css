@@ -1,0 +1,153 @@
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+
+  50% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: 0%;
+  }
+}
+
+@font-face {
+  font-family: Monument Extended;
+  src: url("MonumentExtended-Regular.18694e5a.woff2") format("woff2"), url("MonumentExtended-Regular.177aad09.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Monument Extended;
+  src: url("MonumentExtended-Black.cd1e82f6.woff2") format("woff2"), url("MonumentExtended-Black.ed541fe9.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Monument Extended;
+  src: url("MonumentExtended-Thin.3ae7045e.woff2") format("woff2"), url("MonumentExtended-Thin.fee6c1cb.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Monument Extended;
+  src: url("MonumentExtended-Light.6a3ae3d5.woff2") format("woff2"), url("MonumentExtended-Light.43f0e545.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Monument Extended;
+  src: url("MonumentExtended-Bold.bc18ae7f.woff2") format("woff2"), url("MonumentExtended-Bold.b1b72be2.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --shadow-color: 0deg 0% 63%;
+  --shadow-elevation-low: 0px -.4px .5px hsl(var(--shadow-color) / .34), 0px -.6px .7px -1.2px hsl(var(--shadow-color) / .34), 0px -1.5px 1.7px -2.5px hsl(var(--shadow-color) / .34);
+  --shadow-elevation-medium: 0px -.4px .5px hsl(var(--shadow-color) / .36), 0px -1.2px 1.3px -.8px hsl(var(--shadow-color) / .36), .1px -3px 3.4px -1.7px hsl(var(--shadow-color) / .36), .2px -7.4px 8.3px -2.5px hsl(var(--shadow-color) / .36);
+  --shadow-elevation-high: 0px -.4px .5px hsl(var(--shadow-color) / .38), .1px -2.5px 2.8px -.4px hsl(var(--shadow-color) / .38), .2px -4.8px 5.4px -.8px hsl(var(--shadow-color) / .38), .3px -8.4px 9.5px -1.2px hsl(var(--shadow-color) / .38), .5px -14.3px 16.1px -1.7px hsl(var(--shadow-color) / .38), .7px -23.5px 26.4px -2.1px hsl(var(--shadow-color) / .38), 1.2px -37px 41.6px -2.5px hsl(var(--shadow-color) / .38);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: Monument Extended, sans-serif;
+}
+
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) 0 0 / 400% 400%;
+  animation: 15s infinite gradient;
+  overflow-x: hidden;
+}
+
+header {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+}
+
+header.minimized {
+  height: 20vh;
+  transition: all 1s cubic-bezier(.075, .82, .165, 1);
+}
+
+header input {
+  color: #000;
+  text-transform: uppercase;
+  background-color: #fff3;
+  border: none;
+  border-radius: 100px;
+  width: 8ch;
+  padding: 3rem;
+  font-family: Monument Extended, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+header input:focus {
+  outline: none;
+}
+
+header input::placeholder {
+  color: #fff3;
+}
+
+main {
+  box-shadow: var(--shadow-elevation-medium);
+  width: 100%;
+  height: 0;
+  display: flex;
+  overflow: hidden;
+}
+
+header.minimized + main {
+  height: 80vh;
+}
+
+main > * {
+  flex-grow: 1;
+  flex-basis: 1px;
+  width: 100%;
+  transition: all 1s cubic-bezier(.075, .82, .165, 1);
+  position: relative;
+}
+
+main > :hover {
+  flex-basis: 240px;
+  transition: all 1s cubic-bezier(.075, .82, .165, 1);
+}
+
+main > :hover p {
+  opacity: 1;
+}
+
+.color p {
+  opacity: 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  margin-top: -7px;
+  font-size: 1rem;
+  transition: all .1s cubic-bezier(.075, .82, .165, 1);
+  display: block;
+  position: absolute;
+  top: 50%;
+}
+
+/*# sourceMappingURL=index.2cdaf7bc.css.map */
